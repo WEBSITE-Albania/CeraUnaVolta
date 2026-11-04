@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Menuja | C’era Una Volta</title>
+  <meta name="description" content="Menuja e C’era Una Volta: long drinks, kokteje, kokteje speciale, birra, xhin &amp; uiski, rum, liker, brandi, shote dhe freskuese.">
+  <meta name="theme-color" content="#121110">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@300..500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="menu" data-title-key="menu.title" class="menu-page">
+
+  <main id="main">
+
+    <header class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title" data-i18n="menu.title">Menuja</h1>
+        <p class="page-hero__subtitle" data-i18n="menu.subtitle">Zgjidhni gotën – mbrëmjen e shkruajmë bashkë</p>
+      </div>
+    </header>
+
+    <!-- Category shortcuts – generated from js/menu-data.js -->
+    <nav class="menu-jump" data-i18n-attr="aria-label:menu.jump">
+      <ul id="menu-jump"></ul>
+    </nav>
+
+    <!-- The menu itself – generated from js/menu-data.js -->
+    <div class="container" id="menu-root"></div>
+
+  </main>
+
+  <script src="js/translations.js" defer></script>
+  <script src="js/menu-data.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>

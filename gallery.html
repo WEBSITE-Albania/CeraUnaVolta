@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galeria | C’era Una Volta</title>
+  <meta name="description" content="Galeria e C’era Una Volta: bari, pijet, ekipi dhe mbrëmjet me muzikë live.">
+  <meta name="theme-color" content="#121110">
+  <link rel="icon" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..600;1,6..96,400..600&family=Jost:wght@300..500&display=swap">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery" data-title-key="gallery.title">
+
+  <main id="main">
+
+    <header class="page-hero">
+      <div class="container">
+        <h1 class="page-hero__title" data-i18n="gallery.title">Galeria</h1>
+        <p class="page-hero__subtitle" data-i18n="gallery.subtitle">Mbrëmje, kokteje dhe muzikë në Pazarin e Vjetër</p>
+      </div>
+    </header>
+
+    <section class="section section--tight">
+      <div class="container">
+        <div class="gallery-filter" role="group" data-i18n-attr="aria-label:gallery.filter.label">
+          <button class="gallery-filter__btn" type="button" data-filter="all" aria-pressed="true" data-i18n="gallery.filter.all">Të gjitha</button>
+          <button class="gallery-filter__btn" type="button" data-filter="ambient" aria-pressed="false" data-i18n="gallery.filter.ambient">Ambienti</button>
+          <button class="gallery-filter__btn" type="button" data-filter="drinks" aria-pressed="false" data-i18n="gallery.filter.drinks">Pijet</button>
+          <button class="gallery-filter__btn" type="button" data-filter="music" aria-pressed="false" data-i18n="gallery.filter.music">Muzika live</button>
+        </div>
+
+        <!-- Photos and videos are listed in js/gallery.js; files live in images/gallery/ -->
+        <ul class="gallery-grid" id="gallery-grid"></ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" data-i18n-attr="aria-label:gallery.title" hidden>
+    <div class="lightbox__top">
+      <button class="lightbox__btn lightbox__close" type="button" data-i18n-attr="aria-label:gallery.close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+    <div class="lightbox__stage"></div>
+    <button class="lightbox__btn lightbox__prev" type="button" data-i18n-attr="aria-label:gallery.prev">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="lightbox__btn lightbox__next" type="button" data-i18n-attr="aria-label:gallery.next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+    <div class="lightbox__caption" aria-live="polite">
+      <span class="lightbox__caption-text"></span>
+      <span class="lightbox__counter"></span>
+    </div>
+  </div>
+
+  <script src="js/translations.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/gallery.js" defer></script>
+</body>
+</html>
