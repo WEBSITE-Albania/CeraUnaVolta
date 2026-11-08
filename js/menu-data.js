@@ -17,18 +17,18 @@ const MENU_DATA = [
     key: "menu.cat.longDrinks",
     icon: "longdrink",
     items: [
-      { name: "GIN TONIC", price: 600, desc: "Beefeater Gin, Tonic water" },
+      { name: "GIN TONIC", price: 600, desc: "Befeeater gin, Tonic water" },
       { name: "VODKA TONIC", price: 600, desc: "Standard Vodka, Tonic water" },
-      { name: "JAGEMAISTER REDBULL", price: 600, desc: "Jagemaister, Red Bull" },
-      { name: "BACARDY COLA", price: 550, desc: "Bacardy, Coca - Cola" },
+      { name: "JAGEMAISTER REDBULL", price: 700, desc: "Jagemaister, Red Bull" },
+      { name: "BACARDY COLA", price: 700, desc: "Bacardy, Coca - Cola" },
       { name: "HENDRIKS TONIC", price: 900, desc: "Hendriks Gin, Tonic water" },
-      { name: "JACK COLA", price: 600, desc: "Jack Daniels, Coca - Cola" },
-      { name: "BOMBAY TONIC", price: 600, desc: "Bombay Gin, Coca - Cola" },
+      { name: "JACK COLA", price: 700, desc: "Jack Daniels, Coca - Cola" },
+      { name: "BOMBAY TONIC", price: 700, desc: "Bombay Gin, Coca - Cola" },
       { name: "VODKA REDBULL", price: 700, desc: "Standard Vodka, Red Bull" },
-      { name: "JAGEMAISTER COLA", price: 600, desc: "Jagemaister, Coca - Cola" },
+      { name: "JAGEMAISTER COLA", price: 700, desc: "Jagemaister, Coca - Cola" },
       { name: "TANQUERAY COLA", price: 700, desc: "Tanqueray Gin, Tonic water" },
       { name: "MARE TONIC", price: 1100, desc: "Mare Gin, Tonic water" },
-      { name: "GREYGOOSE REDBULL", price: 1000, desc: "Grey Goose Vodka, Red Bull" }
+      { name: "GREYGOOSE REDBULL", price: 1100, desc: "Grey Goose Vodka, Red Bull" }
     ]
   },
   {
@@ -36,21 +36,21 @@ const MENU_DATA = [
     key: "menu.cat.cocktails",
     icon: "cocktail",
     items: [
+      { name: "ANALKOLIK", price: 450 },
       { name: "APEROL SPRITZ", price: 700, desc: "Aperol, Prosecco, Soda water" },
       { name: "CAMPARY SPRITZ", price: 700, desc: "Campary, Prosecco, Soda water" },
-      { name: "NEGRONI", price: 700, desc: "Dry Gin, Campary, Sweet vermuth, Orange peel" },
-      { name: "MARGARITA", price: 700, desc: "Agave white Tequila, Triple Sec, Lime" },
-      { name: "VODKA SOUR", price: 700, desc: "Vodka, Lemon juice, Syrup, Passion fruit" },
-      { name: "DISARONNO SOUR", price: 700, desc: "Disaronno, Lemon juice, Syrup" },
-      { name: "MOJITO", price: 700, desc: "White Rum, Mint leaves, Lime juice, Syrup, Club soda" },
-      { name: "BLUE HAWAIIAN", price: 700, desc: "Gin, Creme de violette, Lemon juice" },
-      { name: "PORNSTAR MARTINI", price: 700, desc: "Sparkling wine, Passion fruit, Vanilla" },
-      { name: "AMF", price: 700, desc: "Vodka, Gin, Light Rum, Tequilla, Blue curacao, Sour mix, 7-up, Lemon wedge, Lime wedge, Maraschino cherry" },
-      { name: "LONG ISLAND", price: 700, desc: "Vodka, Light Rum, Tequilla, Triple Sec, Coca-Cola" },
-      { name: "B52", price: 700, desc: "Irish Cream Calhua, Baileys, Cointreau" },
-      { name: "CUBA LIBRE", price: 700, desc: "Bacardi, Coca-Cola, Lime juice, Brown sugar" },
-      { name: "MANGO COLADA", price: 700, desc: "Pineapple, Mango, Rum, Coconut cream, Coconut milk" },
-      { name: "TOMA PASSIONATA", price: 800, desc: "Bartender secret!" },
+      { name: "NEGRONI", price: 800, desc: "Dry Gin, Campary, Sweet vermuth, Orange peel" },
+      { name: "MARGARITA", price: 800, desc: "Agave white Tequila, Triple Sec, Lime" },
+      { name: "VODKA SOUR", price: 800, desc: "Vodka, Lemon juice, Syrup, Passion fruit" },
+      { name: "DISARONNO SOUR", price: 800, desc: "Disaronno, Lemon juice, Syrup" },
+      { name: "MOJITO", price: 800, desc: "White Rum, Mint leaves, Lime juice, Syrup, Club soda" },
+      { name: "BLUE HAWAIIAN", price: 800, desc: "Gin, Creme de violette, Lemon juice" },
+      { name: "PORNSTAR MARTINI", price: 800, desc: "Sparkling wine, Passion fruit, Vanilla" },
+      { name: "AMF", price: 900, desc: "Vodka, Gin, Light Rum, Tequilla, Blue curacao, Sour mix, 7-up, Lemon wedge, Lime wedge, Maraschino cherry" },
+      { name: "LONG ISLAND", price: 800, desc: "Vodka, Light Rum, Tequilla, Triple Sec, Coca-Cola" },
+      { name: "B52", price: 800, desc: "Irish Cream Calhua, Baileys, Cointreau" },
+      { name: "CUBA LIBRE", price: 800, desc: "Bacardi, Coca-Cola, Lime juice, Brown sugar" },
+      { name: "MANGO COLADA", price: 800, desc: "Pineapple, Mango, Rum, Coconut cream, Coconut milk" },
       { name: "C’ERA UNA VOLTA", price: 900, desc: "Bartender secret!" }
     ]
   },
@@ -61,7 +61,7 @@ const MENU_DATA = [
     items: [
       { name: "BUBBLE GUN", price: 700, desc: "Standard vodka, Lime juice, Elderflower, Bubble gum" },
       { name: "BELLA C’ERA", price: 700, desc: "Gin Tranqueray, Elderflower, Lime, Mudled cucumber, Mint leaves, Proseco, Tonic" },
-      { name: "PINK PANTHER", price: 700, desc: "Standard Vodka, Watermelon, Batida se coco, Lime juice, Tonic" },
+      { name: "PINK PANTHER", price: 700, desc: "Standard Vodka, Watermelon, Batida de Coco, Lime juice, Tonic" },
       { name: "VODKA FIZZ ROSE", price: 700, desc: "Standard Vodka, Rose syrup, Lime juice, Rose lemonade" },
       { name: "C’ERA UNA VOLTA", price: 800, desc: "Gin Hendriks, Blackberry, Lime juice, Rose lemonade, Rosemary" },
       { name: "C’ERA SPICY", price: 800, desc: "Rum Spice, Triple sec, Elderflower, Lime juice, Soda water" },
@@ -75,10 +75,10 @@ const MENU_DATA = [
     icon: "beer",
     items: [
       { name: "KORCA", price: 300 },
-      { name: "BAVARIA", price: 300 },
-      { name: "BAVARIA 0%", price: 300 },
-      { name: "STELLA ARTOIS", price: 350 },
-      { name: "CORONA", price: 400 },
+      { name: "ESTRELLA GALICA", price: 400 },
+      { name: "ESTRELLA GALICA 0%", price: 350 },
+      { name: "STELLA ARTOIS", price: 400 },
+      { name: "CORONA", price: 500 },
       { name: "HEINEKEN", price: 400 },
       { name: "PAULANER HELL", price: 500 },
       { name: "PAULANER CRISTAL", price: 500 },
@@ -86,7 +86,7 @@ const MENU_DATA = [
       { name: "GINGER BEER", price: 500 },
       { name: "LA TRAPE DOUBLE", price: 700 },
       { name: "LA TRAPE BLONDE", price: 700 },
-      { name: "GUINESS", price: 700 }
+      { name: "LEFFEE", price: 700 }
     ]
   },
   {
@@ -98,17 +98,18 @@ const MENU_DATA = [
       { name: "JAMESON", price: 500 },
       { name: "TULLAMORE", price: 500 },
       { name: "JACK DANIELS", price: 500 },
-      { name: "JOHNIE BLACK", price: 550 },
+      { name: "JOHNIE BLACK", price: 600 },
       { name: "JIM BEAM", price: 600 },
       { name: "TANQUERAY", price: 600 },
       { name: "BOMBAY", price: 600 },
       { name: "HENDRIKS", price: 800 },
-      { name: "JOHNIE DOUBLE BLACK", price: 800 },
-      { name: "JENTLE MANJACK", price: 800 },
+      { name: "JOHNIE DOUBLE BLACK", price: 900 },
+      { name: "JENTLE MAN JACK", price: 900 },
       { name: "GUN POWDER IRISH", price: 1000 },
       { name: "MARE", price: 1000 },
       { name: "GLENFIDDISH 18", price: 1200 },
-      { name: "LAGAVULINE", price: 1400 }
+      { name: "LAGAVULINE", price: 1400 },
+      { name: "MACALLAN 12", price: 1700 }
     ]
   },
   {
@@ -117,11 +118,11 @@ const MENU_DATA = [
     icon: "bottle",
     items: [
       { name: "BACARDI", price: 600 },
-      { name: "BACARDI BLACK", price: 600 },
+      { name: "BACARDI BLACK", price: 700 },
       { name: "HAVANA 7", price: 700 },
       { name: "DICTATOR 12", price: 1200 },
       { name: "DICTATOR 20", price: 1600 },
-      { name: "ZACCAPA", price: 1700 },
+      { name: "ZACCAPA", price: 2200 },
       { name: "ZACCAPA X.0", price: 2500 }
     ]
   },
@@ -130,11 +131,11 @@ const MENU_DATA = [
     key: "menu.cat.liqueur",
     icon: "cordial",
     items: [
-      { name: "JAGERMEISTER", price: 600 },
-      { name: "DISARONO", price: 600 },
-      { name: "MONTENEGRO", price: 700 },
-      { name: "SAMBUCA", price: 1200 },
-      { name: "AMARO DEL CAPO", price: 1600 }
+      { name: "JAGERMEISTER", price: 500 },
+      { name: "DISARONO", price: 500 },
+      { name: "MONTENEGRO", price: 500 },
+      { name: "SAMBUCA", price: 500 },
+      { name: "AMARO DEL CAPO", price: 500 }
     ]
   },
   {
@@ -155,11 +156,12 @@ const MENU_DATA = [
     key: "menu.cat.shots",
     icon: "shots",
     items: [
-      { name: "VODKA", price: 200 },
-      { name: "WHISKEY", price: 250 },
+      { name: "SHAKER SHOTS", price: 200 },
+      { name: "VODKA", price: 250 },
+      { name: "GIN", price: 250 },
       { name: "TEQUILLA", price: 250 },
       { name: "RUM", price: 250 },
-      { name: "GIN", price: 250 }
+      { name: "WHISKEY", price: 300 }
     ]
   },
   {

@@ -120,6 +120,7 @@
     { id: "about", href: "about.html", key: "nav.about" },
     { id: "menu", href: "menu.html", key: "nav.menu" },
     { id: "gallery", href: "gallery.html", key: "nav.gallery" },
+    { id: "songs", href: "songs.html", key: "nav.songs" },
     { id: "contact", href: "contact.html", key: "nav.contact" }
   ];
 

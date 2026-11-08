@@ -261,6 +261,13 @@ html.is-scrolled { --header-h: 70px; }
 }
 .lang-switch__flag img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
+/* Six links (incl. "Kënga juaj"): a little tighter on narrow desktops so
+   the row stays on one line beside the logo and language switcher */
+@media (min-width: 900px) and (max-width: 1099px) {
+  .site-nav__list { gap: 18px; }
+  .site-nav__link { font-size: 0.9rem; letter-spacing: 0.02em; white-space: nowrap; }
+}
+
 /* Mobile toggle */
 .nav-toggle {
   display: none;
@@ -521,6 +528,268 @@ html.is-scrolled { --header-h: 70px; }
 .visit__address { margin-top: 28px; font-size: var(--step-0); letter-spacing: 0.04em; }
 .visit__address a { text-decoration: none; }
 .visit .btn-row { justify-content: center; }
+
+/* Home – vintage atmosphere ------------------------------------------------
+   Borrows the Menu page's treatment (warm brass glow from the top, a Campari
+   note low on the left, dotted brass leaders, compact line glyphs) and adds a
+   faint film grain behind the content. Photos and video are never covered.
+   Scoped to the home page only.                                            */
+body[data-page="home"],
+body[data-page="songs"] {
+  --grain: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .93 0 0 0 0 .86 0 0 0 0 .72 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E");
+}
+
+body[data-page="home"] {
+  background:
+    var(--grain),
+    radial-gradient(120% 70% at 50% 0%, rgba(196, 164, 108, 0.035), transparent 70%),
+    var(--notte);
+}
+
+body[data-page="home"] .hero {
+  background:
+    var(--grain),
+    radial-gradient(55% 70% at 85% 8%, rgba(196, 164, 108, 0.17), transparent 70%),
+    radial-gradient(60% 55% at 72% 46%, rgba(196, 164, 108, 0.09), transparent 72%),
+    radial-gradient(45% 55% at 4% 96%, rgba(143, 42, 52, 0.2), transparent 70%),
+    radial-gradient(130% 100% at 50% 40%, transparent 55%, rgba(8, 7, 6, 0.55) 100%),
+    linear-gradient(180deg, #1a1714 0%, #141210 55%, var(--notte) 100%);
+}
+/* Hero drawing: drawn on the Menu icons' grid, so the line scales with it
+   (the Menu glyphs' proportion) instead of staying a fixed hairline */
+body[data-page="home"] .hero__art { opacity: 0.58; }
+body[data-page="home"] .hero__art path,
+body[data-page="home"] .hero__art circle,
+body[data-page="home"] .hero__art rect { vector-effect: none; }
+body[data-page="home"] .hero__art-bar { opacity: 0.75; }
+@media (max-width: 899px) {
+  body[data-page="home"] .hero__art { opacity: 0.32; }
+}
+
+/* Small "cheers" mark above the Visit title – Menu icon size and line */
+body[data-page="home"] .visit__mark {
+  display: block;
+  width: 58px; height: 58px;
+  margin: 0 auto 22px;
+  color: var(--ottone);
+  opacity: 0.85;
+}
+body[data-page="home"] .visit__mark svg { width: 100%; height: 100%; }
+@media (max-width: 680px) {
+  body[data-page="home"] .visit__mark { width: 46px; height: 46px; margin-bottom: 18px; }
+}
+
+body[data-page="home"] .music {
+  background:
+    var(--grain),
+    radial-gradient(60% 80% at 100% 0%, rgba(143, 42, 52, 0.26), transparent 70%),
+    radial-gradient(50% 70% at 0% 100%, rgba(196, 164, 108, 0.07), transparent 70%),
+    #1b1916;
+}
+
+body[data-page="home"] .visit {
+  background:
+    var(--grain),
+    radial-gradient(50% 70% at 50% 100%, rgba(196, 164, 108, 0.14), transparent 70%),
+    radial-gradient(40% 60% at 0% 0%, rgba(143, 42, 52, 0.08), transparent 70%),
+    var(--notte);
+}
+
+/* Section rule: the brass stroke trails off into the Menu's dotted leader */
+body[data-page="home"] .rule {
+  width: 132px;
+  background:
+    linear-gradient(var(--ottone), var(--ottone)) left center / 56px 1px no-repeat,
+    radial-gradient(circle, rgba(196, 164, 108, 0.55) 0.6px, transparent 1px) 62px center / 7px 3px repeat-x;
+  height: 3px;
+}
+
+/* Song suggestions (songs.html) --------------------------------------------
+   Same warm atmosphere and line-art language as Home and Menu: a vintage
+   microphone in the hero, a serenade guitar beside the form, and a "song
+   sheet" text field.        */
+body[data-page="songs"] {
+  background:
+    var(--grain),
+    radial-gradient(120% 70% at 50% 0%, rgba(196, 164, 108, 0.035), transparent 70%),
+    var(--notte);
+}
+
+.songs-hero {
+  position: relative;
+  overflow: hidden;
+  padding: calc(var(--header-h) + clamp(20px, 3.5vw, 52px)) 0 clamp(40px, 5.5vw, 80px);
+  background:
+    var(--grain),
+    radial-gradient(50% 80% at 82% 12%, rgba(196, 164, 108, 0.16), transparent 70%),
+    radial-gradient(45% 60% at 0% 100%, rgba(143, 42, 52, 0.2), transparent 70%),
+    radial-gradient(130% 100% at 50% 40%, transparent 55%, rgba(8, 7, 6, 0.5) 100%),
+    linear-gradient(180deg, #1a1714 0%, var(--notte) 100%);
+  border-bottom: 1px solid var(--line);
+}
+.songs-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(16px, 5vw, 80px);
+}
+.songs-hero__eyebrow {
+  margin-bottom: 14px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--step-1);
+  color: var(--ottone);
+}
+.songs-hero__title { font-size: var(--step-5); line-height: 0.95; letter-spacing: -0.02em; }
+.songs-hero__lead {
+  margin-top: 26px;
+  max-width: 38ch;
+  font-size: var(--step-1);
+  line-height: 1.55;
+  color: var(--sabbia);
+}
+.songs-hero__art {
+  width: clamp(104px, 22vw, 270px);
+  color: var(--ottone);
+  opacity: 0.82;
+}
+.songs-mic { width: 100%; height: auto; }
+
+.songs-request { padding-top: clamp(56px, 7vw, 100px); }
+.songs-request__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 4fr) minmax(0, 7fr);
+  gap: clamp(32px, 7vw, 110px);
+  align-items: center;
+}
+.songs-request__art {
+  justify-self: center;
+  width: 100%;
+  max-width: 300px;
+  color: var(--ottone);
+  opacity: 0.7;
+}
+.songs-guitar { width: 100%; height: auto; }
+
+.song-form__title { font-size: var(--step-3); max-width: 18ch; }
+.song-form__intro { margin-top: 18px; max-width: 52ch; color: var(--sabbia); }
+.song-form__label {
+  display: block;
+  margin-top: 36px;
+  font-size: 0.82rem;
+  font-weight: 450;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ottone);
+}
+/* The field is written like a sheet of ruled paper, not a boxed input */
+.song-form__sheet { margin-top: 10px; border-top: 1px solid var(--line-strong); }
+.song-form__field {
+  --rule: 2.5rem;
+  display: block;
+  width: 100%;
+  min-height: calc(var(--rule) * 4);
+  padding: 0 2px;
+  border: 0;
+  border-bottom: 1px solid var(--line-strong);
+  border-radius: 0;
+  background:
+    linear-gradient(transparent calc(var(--rule) - 1px), var(--line) calc(var(--rule) - 1px)) 0 0 / 100% var(--rule) local;
+  color: var(--avorio);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  line-height: var(--rule);
+  resize: vertical;
+  transition: border-color 0.3s var(--ease);
+}
+.song-form__field::placeholder { color: var(--sabbia); opacity: 0.7; }
+.song-form__field:focus { outline: none; }
+.song-form__field:focus-visible,
+.song-form__field:focus { border-bottom-color: var(--ottone); box-shadow: 0 1px 0 var(--ottone); }
+.song-form__field[aria-invalid="true"] { border-bottom-color: #c25a64; box-shadow: 0 1px 0 #c25a64; }
+
+.song-form__status { min-height: 1.6em; margin: 12px 0 0; font-size: 0.95rem; line-height: 1.5; }
+.song-form__status.is-error { color: #e0959c; }
+.song-form__status.is-ok { color: var(--ottone); }
+
+.song-form__actions {
+  display: flex; flex-wrap: wrap; align-items: center;
+  gap: 16px 26px;
+  margin-top: 18px;
+}
+.song-form__hint {
+  display: flex; align-items: flex-start; gap: 10px;
+  margin: 0;
+  max-width: 36ch;
+  font-size: var(--step--1);
+  line-height: 1.5;
+  color: var(--sabbia);
+}
+.song-form__hint svg { width: 18px; height: 18px; flex: none; margin-top: 1px; color: var(--ottone); }
+
+.songs-repertoire {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 8px 22px;
+  margin: clamp(64px, 9vw, 120px) 0 0;
+  padding-inline: var(--gutter);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.2rem, 1rem + 1vw, 1.7rem);
+  color: var(--sabbia);
+}
+.songs-repertoire span:nth-child(3) { color: var(--ottone); }
+.songs-repertoire__dot { width: 6px; height: 6px; border: 1px solid var(--ottone); border-radius: 50%; }
+
+@media (max-width: 899px) {
+  .songs-request__grid { grid-template-columns: 1fr; }
+  .songs-request__art { order: 2; max-width: 190px; opacity: 0.6; }
+}
+@media (max-width: 560px) {
+  /* microphone beside the title; the intro runs full width below */
+  .songs-hero__grid {
+    grid-template-columns: minmax(0, 1fr) 84px;
+    grid-template-areas: "eyebrow art" "title art" "lead lead";
+    column-gap: 12px; row-gap: 0;
+  }
+  .songs-hero__text { display: contents; }
+  .songs-hero__eyebrow { grid-area: eyebrow; }
+  .songs-hero__title { grid-area: title; }
+  .songs-hero__lead { grid-area: lead; }
+  .songs-hero__art { grid-area: art; align-self: end; width: 84px; }
+  .song-form__actions .btn { flex: 1 1 100%; }
+  .song-form__field { font-size: 1.18rem; --rule: 2.3rem; }
+  /* phrases sit just below the guitar, one per line, each framed by a small circle */
+  .songs-repertoire__dot { display: none; }
+  .songs-repertoire { flex-direction: column; gap: 6px; margin-top: 4px; }
+  .songs-repertoire > span:not(.songs-repertoire__dot) {
+    display: inline-flex; align-items: center; gap: 0.75em;
+    white-space: nowrap;
+  }
+  .songs-repertoire > span:not(.songs-repertoire__dot)::before,
+  .songs-repertoire > span:not(.songs-repertoire__dot)::after {
+    content: "";
+    flex: none;
+    width: 5px; height: 5px;
+    border: 1px solid var(--ottone);
+    border-radius: 50%;
+    opacity: 0.85;
+    transform: translateY(1px);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .js-ready .songs-hero__text > * { animation: songs-rise 1s var(--ease) both; }
+  .js-ready .songs-hero__title { animation-delay: 0.1s; }
+  .js-ready .songs-hero__lead { animation-delay: 0.25s; }
+  .js-ready .songs-hero__art { animation: songs-fade 1.8s var(--ease) 0.2s both; }
+  .songs-twinkle { animation: songs-twinkle 4.8s ease-in-out infinite; }
+  .songs-twinkle--late { animation-delay: 2.4s; }
+
+  @keyframes songs-rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+  @keyframes songs-fade { from { opacity: 0; } }
+  @keyframes songs-twinkle { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+}
 
 /* 7. Inner pages ----------------------------------------------------------- */
 .page-hero {
